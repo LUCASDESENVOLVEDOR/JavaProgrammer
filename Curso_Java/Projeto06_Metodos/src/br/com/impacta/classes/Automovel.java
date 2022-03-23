@@ -2,6 +2,8 @@ package br.com.impacta.classes;
 
 public class Automovel {
 	
+	public static final String paisOrigem = "Brasil";
+	
 	//atributos.
 	private	String	marca;  
 	private	String modelo;
@@ -14,7 +16,8 @@ public class Automovel {
 		
 		String reposta = titulo +  "\n\nMarca: " + this.getMarca() + 
 				         "\nModelo: " + this.getModelo() + 
-				         "\nAno: " + this.getAno() + 
+				         "\nAno: " + this.getAno() +
+				         "\nPais Origem: " + paisOrigem +
 				         "\nPlaca: " + this.getPlaca();		
 		
 		return reposta;
@@ -26,16 +29,14 @@ public class Automovel {
 		
 		String reposta = titulo +  "\n\nMarca: " + this.getMarca() + 
 				         "\nModelo: " + this.getModelo() + 
-				         "\nAno: " + this.getAno() + 
+				         "\nAno: " + this.getAno() +
+				         "\nPais Origem: " + paisOrigem + 
 				         "\nPlaca: " + this.getPlaca();		
 		
 		return reposta;
 		
 	}
-	
-	
-	
-	
+   	
 	
 	//THIS = REFERENCIA A PROPRIA CLASSE
 	 // é uma referencia que serve para termos acesso a todos 
