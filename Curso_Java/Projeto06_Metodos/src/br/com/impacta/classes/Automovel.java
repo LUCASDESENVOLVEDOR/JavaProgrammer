@@ -10,15 +10,32 @@ public class Automovel {
 	
 	public String mostrar() {	
 		
-		String reposta = "Marca: " + marca + 
-				         "\nModelo: " + modelo + 
-				         "\nAno: " + ano + 
-				         "\nPlaca: " + placa;
+		String titulo = "DADOS DO AUTOMÓVEL";
 		
+		String reposta = titulo +  "\n\nMarca: " + this.getMarca() + 
+				         "\nModelo: " + this.getModelo() + 
+				         "\nAno: " + this.getAno() + 
+				         "\nPlaca: " + this.getPlaca();		
 		
 		return reposta;
 		
 	}
+	
+   public String mostrar(String titulo) {	
+		
+		
+		String reposta = titulo +  "\n\nMarca: " + this.getMarca() + 
+				         "\nModelo: " + this.getModelo() + 
+				         "\nAno: " + this.getAno() + 
+				         "\nPlaca: " + this.getPlaca();		
+		
+		return reposta;
+		
+	}
+	
+	
+	
+	
 	
 	//THIS = REFERENCIA A PROPRIA CLASSE
 	 // é uma referencia que serve para termos acesso a todos 
@@ -26,13 +43,14 @@ public class Automovel {
 	
 	//TODA CLASSE POSSUI UM THIS. (identifica info que fazem parte da classe)
 	
+	
+	
 	public void lerDados(String marca, String modelo, int ano, String placa ) {
-		this.marca = marca;
-	    this.modelo = modelo;
-	    this.ano =  ano;
-	    this.placa =  placa;	    
-	   
-		
+	
+		this.setMarca(marca);
+		this.setModelo(modelo);
+		this.setAno(ano);
+		this.setPlaca(placa);
 	}
 
 	public String getMarca() {
@@ -52,10 +70,15 @@ public class Automovel {
 	}
 
 	public int getAno() {
-		return ano;
+		return this.ano;
 	}
 
 	public void setAno(int ano) {
+		
+		if(ano < 1970) {
+			throw new NumberFormatException("O ano não pode ser menor que 1970.");
+		}
+		
 		this.ano = ano;
 	}
 
