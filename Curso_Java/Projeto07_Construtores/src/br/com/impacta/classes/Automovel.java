@@ -19,15 +19,46 @@ public class Automovel {
 	private	int ano;
 	private	String placa;
 	
+	//construtores
+	public Automovel(String marca, String modelo) {
+		this.setMarca(marca);
+		this.setModelo(modelo);	
+	}
+	public Automovel(String marca, String modelo, int ano) {
+		this.setMarca(marca);
+		this.setModelo(modelo);	
+		this.setAno(ano);
+	}
+	public Automovel(String marca, String modelo, int ano, String placa) {
+		this.setMarca(marca);
+		this.setModelo(modelo);	
+		this.setAno(ano);
+		this.setPlaca(placa);
+	}
+	
+	
+	
+	
 	public String mostrar() {	
 		
 		String titulo = "DADOS DO AUTOMÓVEL";
 		
 		String reposta = titulo +  "\n\nMarca: " + this.getMarca() + 
-				         "\nModelo: " + this.getModelo() + 
-				         "\nAno: " + this.getAno() +
-				         "\nPais Origem: " + PAIS_ORIGEM +
-				         "\nPlaca: " + this.getPlaca();		
+				         "\nModelo: " + this.getModelo(); 		         
+				        
+		
+		if(this.getAno() > 0) {
+			
+			reposta += "\nAno: " + this.getAno();
+		}
+		
+		if(this.getPlaca() != null) {
+			
+			reposta += "\nPlaca: " + this.getPlaca();
+		}
+		
+		reposta +=  "\nPais Origem: " + PAIS_ORIGEM;
+		
 		
 		return reposta;
 		

@@ -1,7 +1,5 @@
 package br.com.impacta.aplicacao;
 
-import java.awt.JobAttributes;
-
 import javax.swing.JOptionPane;
 
 import br.com.impacta.classes.Automovel;
@@ -17,30 +15,31 @@ public class AppAutomovel01 {
 		
 		//auto.setAno(1959);
 		
-		//Automovel.paisOrigem = "Argentina";
-		JOptionPane.showMessageDialog(null, auto.mostrar());
-		
-		//Automovel.paisOrigem = "Colombia";
-		JOptionPane.showMessageDialog(null, auto.mostrar());
 		
 		
 		//double resultado = somar(4, 2);
-		String texto2 = auto.mostrar();
+		String texto = auto.mostrar();
 		//System.out.println(texto);
-		System.out.println(texto2);
+		System.out.println(texto);
+		
+		//Automovel.paisOrigem = "Argentina";
+		JOptionPane.showMessageDialog(null,auto.mostrar());
+		
+		
+		//Automovel.PAIS_ORIGEM = "Colombia";
+		JOptionPane.showMessageDialog(null,auto.mostrar());
+		
 		//JOptionPane.showMessageDialog(null, texto);
 		//JOptionPane.showMessageDialog(null, texto,"Relatório", JOptionPane.ERROR_MESSAGE);
 		
 		//int n = Integer.parseInt(JOptionPane.showInputDialog("Informe um numero:"));
 
 		
-
+		//TIPO PRIMITIVO NAO PODE RECEBER NULLO.
+		// int j = (Integer) null;
 		
-		
-		
-		
-		
-		
+		//APENAS CLASSE PODE SER NULLO.		
+		Integer j = null;		
 		
 		
 	}
