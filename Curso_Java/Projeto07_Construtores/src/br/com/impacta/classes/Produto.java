@@ -1,16 +1,27 @@
 package br.com.impacta.classes;
 
 public class Produto {
-	private int codigo;
+	private final int codigo;
 	private String categoria;
 	private String descricao;
 	private double preco;
+	
+	private static int contador = 1;
+	
+	public Produto(String categoria, String descricao, double preco) {
+		this.codigo = contador++;
+		this.setCategoria(categoria);
+		this.setDescricao(descricao);
+		this.setPreco(preco);	
+	}
+	
+	
+	
+	
 	public int getCodigo() {
 		return codigo;
 	}
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
-	}
+	
 	public String getCategoria() {
 		return categoria;
 	}

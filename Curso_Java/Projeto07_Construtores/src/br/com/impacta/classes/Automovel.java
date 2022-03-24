@@ -19,23 +19,33 @@ public class Automovel {
 	private	int ano;
 	private	String placa;
 	
+	private final int chassi;
+	
+	
 	//construtores
-	public Automovel(String marca, String modelo) {
+	public Automovel(String marca, String modelo) {			
+		this.chassi = (int)(Math.random() *1000);
 		this.setMarca(marca);
 		this.setModelo(modelo);	
-	}
-	public Automovel(String marca, String modelo, int ano) {
-		this.setMarca(marca);
-		this.setModelo(modelo);	
-		this.setAno(ano);
-	}
-	public Automovel(String marca, String modelo, int ano, String placa) {
-		this.setMarca(marca);
-		this.setModelo(modelo);	
-		this.setAno(ano);
-		this.setPlaca(placa);
 	}
 	
+	public Automovel(String marca, String modelo, int ano) {
+		this(marca,modelo);	
+		this.setAno(ano);
+			
+	}	
+	
+	public Automovel(String marca, String modelo, int ano, String placa) {
+		this(marca,modelo,ano);
+		this.setPlaca(placa);
+	}
+//	public Automovel(String marca, String modelo, int ano, String placa) {
+//		
+//		this.marca = marca;
+//		this.modelo = modelo;
+//		this.ano = ano;
+//		this.placa = placa;
+//	}
 	
 	
 	
@@ -44,7 +54,8 @@ public class Automovel {
 		String titulo = "DADOS DO AUTOMÓVEL";
 		
 		String reposta = titulo +  "\n\nMarca: " + this.getMarca() + 
-				         "\nModelo: " + this.getModelo(); 		         
+				         "\nModelo: " + this.getModelo() +
+				         "\nChassi:" + this.getChassi();
 				        
 		
 		if(this.getAno() > 0) {
@@ -68,7 +79,8 @@ public class Automovel {
 		
 		
 		String reposta = titulo +  "\n\nMarca: " + this.getMarca() + 
-				         "\nModelo: " + this.getModelo() + 
+				         "\nModelo: " + this.getModelo() +				         
+				         "\nChassi:" + this.getChassi() + 
 				         "\nAno: " + this.getAno() +
 				         "\nPais Origem: " + PAIS_ORIGEM + 
 				         "\nPlaca: " + this.getPlaca();		
@@ -84,7 +96,9 @@ public class Automovel {
 	
 	//TODA CLASSE POSSUI UM THIS. (identifica info que fazem parte da classe)
 	
-	
+   public int getChassi() {
+		return chassi;
+	}
 	
 	public void lerDados(String marca, String modelo, int ano, String placa ) {
 	
