@@ -1,11 +1,22 @@
 package br.com.impacta.classes;
 
+import br.com.impacta.enumeracoes.Sexo;
+
 public class Aluno extends Pessoa {
   
 	private int matricula;
 	private Curso curso;
 	
-	public 
+	 
+	public Aluno() {	
+		super();
+	}
+	
+	public Aluno(String nome, int idade,Sexo sexo,int matricula,Curso curso) {
+      super(nome, idade,sexo);
+      this.setMatricula(matricula);
+      this.setCurso(curso);
+	}
 	
 	
 	

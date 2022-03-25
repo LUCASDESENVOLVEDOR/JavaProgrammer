@@ -8,6 +8,27 @@ public class Pessoa {
 	private	int idade;
 	private	Sexo sexo;
 	
+	public Pessoa() {
+		super();
+	}
+	
+	
+	public Pessoa(String nome, int idade, Sexo sexo) {
+		super();
+		this.setNome(nome);	
+		this.setIdade(idade);
+		this.setSexo(sexo);
+	}
+	
+	public String mostrar() {
+		
+		return  "\nNome: " + this.getNome() + 
+				"\nIdade:" + this.getIdade() +
+				"\nSexo:" + this.getSexo();
+				
+				
+	}
+	
 	
 	
 	

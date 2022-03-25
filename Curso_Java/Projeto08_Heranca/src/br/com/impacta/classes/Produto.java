@@ -18,6 +18,10 @@ public class Produto {
 	
 	
 	
+	
+	
+	
+	
 	public int getCodigo() {
 		return codigo;
 	}
