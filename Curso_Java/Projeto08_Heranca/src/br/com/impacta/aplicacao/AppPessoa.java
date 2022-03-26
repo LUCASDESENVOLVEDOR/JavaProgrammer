@@ -35,7 +35,6 @@ public class AppPessoa {
 		aluno.setIdade(32);
 		aluno.setSexo(Sexo.FEMININO);
 		aluno.setMatricula(12345);
-		JOptionPane.showMessageDialog(null,aluno.mostrar());
 		
 //		Curso novoCurso = new Curso();
 //		novoCurso.setCodigo(222);
@@ -43,7 +42,8 @@ public class AppPessoa {
 //		novoCurso.setCargaHoraria(100);
 //		novoCurso.setPreco(1000);
 		
-		aluno.setCurso( new Curso(222,"Java Programmer", 100,1000));
+		//aluno.setCurso( new Curso(222,"Java Programmer", 100,1000));
+		JOptionPane.showMessageDialog(null,aluno.mostrar());
 		
 		
 		
@@ -52,3 +52,11 @@ public class AppPessoa {
 	}
 	
 }
+
+
+
+
+
+
+
+

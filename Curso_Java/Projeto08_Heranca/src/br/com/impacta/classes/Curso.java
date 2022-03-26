@@ -17,6 +17,18 @@ public class Curso {
 	}
 	
 	
+	public String mostrar() {
+		
+		return "Código: " + this.getCodigo() +
+				"\nDescrição: " + this.getDescricao() + 
+				"\nCarga Horária: " + this.getCargaHoraria()+
+				"\nPreço: " + this.getPreco();			
+		
+		
+	}
+	
+	
+	
 	public int getCodigo() {
 		return codigo;
 	}

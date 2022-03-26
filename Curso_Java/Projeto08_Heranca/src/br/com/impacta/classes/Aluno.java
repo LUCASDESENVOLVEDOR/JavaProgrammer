@@ -35,6 +35,28 @@ public class Aluno extends Pessoa {
 	public void setCurso(Curso curso) {
 		this.curso = curso;
 	}
+
+	
+	
+	
+	public String mostrar() {
+		
+//		Curso cursoAtual = this.getCurso();
+//		
+//		
+//		return super.mostrar() + 
+//				"\nMatricula: " + this.getMatricula() +
+//				"\n\nDADOS DO CURSO:\n\n"  + cursoAtual.mostrar();
+//		
+		return super.mostrar() + 
+			"\nMatricula: " + this.getMatricula() +		
+		
+			
+	          ((this.getCurso() == null) ? "\nNenhum curso atribuido" :		        
+		        	"\n\nDADOS DO CURSO:\n\n" + this.getCurso().mostrar());
+		    		
+		
+	}
 	
 	
 	

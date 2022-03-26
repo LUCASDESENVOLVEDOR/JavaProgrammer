@@ -22,7 +22,16 @@ public class Funcionario extends Pessoa {
 		
 	}
 	
+	//OVERRIDE = METODO QUE SOBRESCREVE 
 	
+	@Override
+	public String mostrar() {
+		
+		return super.mostrar() + 
+				"\nCargo: " + this.getCargo() +
+				"\nSalário: " + this.getSalario();		
+		
+	}
 	
 	
 	
