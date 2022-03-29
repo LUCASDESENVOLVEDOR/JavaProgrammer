@@ -32,7 +32,18 @@ public class ProdutoImportado extends Produto {
 
 	public void setTaxaImportacao(double taxaImportacao) {
 		this.taxaImportacao = taxaImportacao;
+	}
+
+	@Override
+	public String mostrar() {		
+		return super.mostrar() +  "\nTaxa de Importação:" 
+		+ this.getTaxaImportacao() ;
 	}	
+	
+	
+	
+	
+	
 	
 
 }
