@@ -12,6 +12,13 @@ public class AppPolimorfismo03 {
 		Produto prod2 = new 
 				ProdutoImportado("Transporte", "Bicicleta",2500,6.0);
 		
+		//desejamos alterar a taxa de importação para 7.0%
+		if(prod2 instanceof ProdutoImportado) {
+			((ProdutoImportado) prod2).setTaxaImportacao(7.0);
+		}
+		
+		
+		
 		JOptionPane.showMessageDialog(null, prod.mostrar());
 		JOptionPane.showMessageDialog(null, prod2.mostrar());
 		

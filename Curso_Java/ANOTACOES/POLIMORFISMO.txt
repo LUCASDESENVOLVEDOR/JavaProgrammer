@@ -1,0 +1,7 @@
+Polimorfismo
+
+1- Quem executa um método é o objeto nunca a variavel.
+
+2 - Polimorfismo está sempre relacionado ao metodo!
+
+3 - Herança esta relacionada a classe, quem tem formas diferentes é o método.

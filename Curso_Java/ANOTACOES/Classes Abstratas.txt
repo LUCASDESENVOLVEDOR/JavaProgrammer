@@ -1,0 +1,12 @@
+Classes Abstratas
+
+São classes que não podem ser instanciadas. Elas servem exclusivamente 
+como superclasses.
+
+
+
+
+
+
+
+

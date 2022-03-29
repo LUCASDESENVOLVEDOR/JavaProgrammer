@@ -28,12 +28,19 @@ public class AppPolimorfismo04 {
 	    //Desejamos alterar o curso para Java;
 	    Curso curso  = new Curso(11,"Java",100,1200);
 	    
+	    if(p1 instanceof Aluno) {	    	
+	    	p1.setIdade(27);
+	        ((Aluno) p1).setCurso(curso);
+	    	
+	    }
 	    
-		//Aluno aluno = (Aluno)p1;
-		//aluno.setCurso(curso);    
+	    
+	    
+//		Aluno aluno = (Aluno)p1;
+//		aluno.setCurso(curso);    
 		    
 	    //outra forma de realiza o typecast
-	    ((Aluno)p1).setCurso(curso);
+	    //((Aluno)p1).setCurso(curso);
 	    
 	    
 	    
