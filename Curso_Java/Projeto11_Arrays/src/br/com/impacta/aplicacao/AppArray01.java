@@ -15,12 +15,22 @@ public class AppArray01 {
 		
 		
 			
-		for(int i= 0; i < 5; i++) {
+		for(int i= 0; i < numeros.length; i++) {
 			
 			//qual o valor da posicao?
 			System.out.println(numeros[i]);
 		}
 		
+		System.out.println();
+		
+		for(int i = numeros.length-1 ; i >= 0; i--) {
+			
+			System.out.println(numeros[i]);
+		}
+		
+		
+		//Não é possivel redimenssionar um array,
+		// depois de criado não muda mais.
 		
 		
 		
