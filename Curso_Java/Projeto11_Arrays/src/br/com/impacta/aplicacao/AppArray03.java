@@ -7,7 +7,7 @@ public class AppArray03 {
 		
 		//quando declaramos e atribuimos um valor
 		            //new int[] se torna opcional.
-		int[] numeros =  {17,13,18,25,39,17};
+		int[] numeros = new int[]  {17,13,18,25,39,17};
 		
 		for( int elemento : numeros) {			
 			System.out.println(elemento);			

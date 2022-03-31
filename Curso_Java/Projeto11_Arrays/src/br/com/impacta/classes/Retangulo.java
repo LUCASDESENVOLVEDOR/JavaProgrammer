@@ -7,6 +7,13 @@ public class Retangulo implements Figura {
 	private double base;
 	private double altura;
 	
+	
+	public Retangulo(double base, double altura) {		
+		this.setBase(base);
+		this.setAltura(altura);		
+	}
+	
+	
 	public double getBase() {
 		return base;
 	}

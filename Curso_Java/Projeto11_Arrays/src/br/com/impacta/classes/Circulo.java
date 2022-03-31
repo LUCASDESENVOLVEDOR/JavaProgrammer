@@ -6,6 +6,11 @@ public class Circulo implements Figura {
 	
 	private double raio;
 
+	public Circulo(double raio) {
+		this.setRaio(raio);		
+	}
+	
+	
 	public double getRaio() {
 		return raio;
 	}
