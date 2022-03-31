@@ -1,0 +1,9 @@
+
+for ( inicializacao  ;   condicao   ;    variacao da variavel    )
+
+--foreach
+
+for ( elemento da coleção : colecao )
+
+
+for ( int numero : numeros ) 
