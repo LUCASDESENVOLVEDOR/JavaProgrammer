@@ -5,7 +5,7 @@ import br.com.impacta.interfaces.Documento;
 
 
 
-public abstract class Pessoa {
+public abstract class Pessoa implements Comparable<Pessoa> {
 	
 	private	String nome;
 	private	int idade;
@@ -71,8 +71,18 @@ public abstract class Pessoa {
 	}
 	public void setSexo(Sexo sexo) {
 		this.sexo = sexo;
+	}
+
+
+	@Override
+	public int compareTo(Pessoa o) {
+		
+		return this.getNome().compareTo(o.getNome());
+		
 	}	
 
+	
+	
 	
 	
 	

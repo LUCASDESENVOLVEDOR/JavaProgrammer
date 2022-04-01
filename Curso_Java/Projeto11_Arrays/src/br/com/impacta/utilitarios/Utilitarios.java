@@ -37,6 +37,20 @@ public class Utilitarios {
 		
 	}
 	
+	//escreva um metodo que recebe como parametro
+	//um array de numeros reais, e retorna a media
+	// dos elementod do array.
+	
+	public static double calcularMediaArray(double... numeros) {
+		double soma =0;
+		
+		for (int i = 0; i < numeros.length; i++) {			
+		     soma += numeros[i];				
+		}	
+		
+		return soma / numeros.length;
+	}	
+	
 	
 	
 	

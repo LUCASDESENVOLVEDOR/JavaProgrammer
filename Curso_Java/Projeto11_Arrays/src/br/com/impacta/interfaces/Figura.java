@@ -3,7 +3,7 @@ package br.com.impacta.interfaces;
 import javax.swing.JOptionPane;
 
 //INTERFACE É ABSTRATO POR DEFINIÇÃO.
-public interface Figura {    
+public interface Figura extends Comparable<Figura> {    
 	
   // todos os metodos de uma interface são
 	//publicos e abstratos por definicao

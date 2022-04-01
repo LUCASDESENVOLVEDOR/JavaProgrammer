@@ -29,6 +29,13 @@ public class Circulo implements Figura {
 		
 		
 	}
+
+
+	@Override
+	public int compareTo(Figura o) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 	
 	
 	

@@ -20,6 +20,13 @@ public class AppUtilitarios {
 		System.out.println(Utilitarios
 				.gerarEmail(" Lucas ", " Aragao "));
 		
+		
+		//executando o metodo calcularMediaArray()
+		double[] lista = {2.3, 4.5, 9.1, 10,8};
+        double media = Utilitarios.calcularMediaArray(lista);
+		
+        System.out.println("Média dos elementos do array: " + media);
+		
 
 		
 	}

@@ -1,6 +1,6 @@
 package br.com.impacta.classes;
 
-public class Curso {
+public class Curso implements Comparable<Curso>  {
 	
 	private int codigo;
 	private String descricao;
@@ -53,7 +53,30 @@ public class Curso {
 	public void setPreco(double preco) {
 		this.preco = preco;
 	}
+
+
+	@Override
+	public int compareTo(Curso curso_atual) {
+		
+	return this.getDescricao().compareTo(curso_atual.getDescricao());
+		
+	}
 	
 	
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
