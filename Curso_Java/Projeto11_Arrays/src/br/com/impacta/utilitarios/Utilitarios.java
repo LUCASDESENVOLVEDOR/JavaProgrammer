@@ -41,15 +41,24 @@ public class Utilitarios {
 	//um array de numeros reais, e retorna a media
 	// dos elementod do array.
 	
-	public static double calcularMediaArray(double... numeros) {
+	public static double calcularMediaArray(double[] numeros) {
 		double soma =0;
 		
 		for (int i = 0; i < numeros.length; i++) {			
 		     soma += numeros[i];				
 		}	
 		
-		return soma / numeros.length;
+		return  numeros.length > 0 ? soma / numeros.length : soma;
+		
 	}	
+	
+	//Variavel nunca pode ter esse tipo (...) varargs
+	// apenas como parametro
+	
+	public static double calcularMediaNumeros(double... numeros) {
+				
+		return 	calcularMediaArray(numeros);
+	}
 	
 	
 	
