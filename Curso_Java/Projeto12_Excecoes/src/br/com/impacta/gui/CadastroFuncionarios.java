@@ -158,14 +158,14 @@ public class CadastroFuncionarios extends JFrame {
 							);					
 					
 					//apresentando os dados.
-					JOptionPane.showMessageDialog(null, funcionario.mostrar());
+					JOptionPane.showMessageDialog(CadastroFuncionarios.this, funcionario.mostrar());
 					
 					
 					
 					
 				} catch (Exception e2) {
 					
-					JOptionPane.showMessageDialog(null,
+					JOptionPane.showMessageDialog(CadastroFuncionarios.this,
 							              "Erro: " + e2.getMessage(),
 					                      "Erro",
 					                      JOptionPane.ERROR_MESSAGE							
@@ -180,3 +180,15 @@ public class CadastroFuncionarios extends JFrame {
 		panel.add(btnIncluirFuncionario);
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
