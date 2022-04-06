@@ -18,7 +18,9 @@ public abstract class Pessoa implements Comparable<Pessoa> {
 	}
 	
 	
-	public Pessoa(String nome, int idade, Sexo sexo, Documento documento) {
+	public Pessoa(String nome, int idade, Sexo sexo, Documento documento) 
+	throws IllegalAccessException
+	{
 		super();
 		this.setNome(nome);	
 		this.setIdade(idade);
@@ -58,12 +60,23 @@ public abstract class Pessoa implements Comparable<Pessoa> {
 		return nome;
 	}
 	public void setNome(String nome) {
+		if(nome == null || nome.trim().length() == 0) {
+			throw new IllegalArgumentException
+			("O nome foi fornecido incorretamente.");
+		}
 		this.nome = nome;
 	}
-	public int getIdade() {
+	public int getIdade() {		
 		return idade;
 	}
-	public void setIdade(int idade) {
+	public void setIdade(int idade) throws IllegalAccessException {
+		
+        if(idade < 0) {
+        	throw new IllegalAccessException("A idade não pode ser negativa");
+			
+		}
+		
+		
 		this.idade = idade;
 	}
 	public Sexo getSexo() {

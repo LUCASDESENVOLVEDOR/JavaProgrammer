@@ -16,7 +16,7 @@ public class Funcionario extends Pessoa {
 	
 	public Funcionario(String nome, int idade, Sexo sexo,
 			Documento documento, String cargo,
-			double salario) {
+			double salario) throws IllegalAccessException {
 		
 		super(nome, idade,sexo,documento);
 		this.setCargo(cargo);

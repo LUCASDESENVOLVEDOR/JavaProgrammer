@@ -22,7 +22,11 @@ public class AppPessoa {
 		//instancia da  classe funcionario
 		Pessoa funcionario = new Funcionario();
 		funcionario.setNome("Joel");
-		funcionario.setIdade(29);
+		try {
+			funcionario.setIdade(29);
+		} catch (IllegalAccessException e) {			
+			e.printStackTrace();
+		}
 		funcionario.setSexo(Sexo.MASCULINO);
 		((Funcionario)funcionario).setCargo("Vendedor");
 		((Funcionario)funcionario).setSalario(5000);
@@ -32,7 +36,12 @@ public class AppPessoa {
 		//instancia da classe Aluno
 		Pessoa aluno = new Aluno();
 		aluno.setNome("Luana");
-		aluno.setIdade(32);
+		try {
+			aluno.setIdade(32);
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		aluno.setSexo(Sexo.FEMININO);
 		((Aluno)aluno).setMatricula(12345);
 		
