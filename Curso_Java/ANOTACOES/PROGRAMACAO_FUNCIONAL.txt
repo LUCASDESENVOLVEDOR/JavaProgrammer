@@ -1,0 +1,8 @@
+Programação funcional 
+
+Consiste em definirmos operações de uma forma implicita. Definirmos o que queremos na hora de utilizar.
+
+
+Quando falamos de programação funcional estamos falando
+de interface.
+

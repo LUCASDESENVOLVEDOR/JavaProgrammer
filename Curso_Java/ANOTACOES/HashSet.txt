@@ -1,0 +1,5 @@
+
+1 - HashSet coleção mais eficiente  - porém não garante ordem nada, ele 
+decide a ordem.
+
+2 - HashSet remove  itens duplicados

@@ -13,14 +13,7 @@ public class Produto {
 		this.setCategoria(categoria);
 		this.setDescricao(descricao);
 		this.setPreco(preco);	
-	}
-	
-	
-	
-	
-	
-	
-	
+	}	
 	
 	public int getCodigo() {
 		return codigo;
@@ -53,6 +46,15 @@ public class Produto {
 			   "\nDescrição: " + this.getDescricao() +
 			   "\nCategoria: " + this.getCategoria() + 
 			   "\nPreço: " + this.getPreco();
+	}
+
+	@Override
+	public String toString() {
+		
+		return "(" + this.getCodigo() + ", " 
+		           + this.getCategoria() + ", "
+		           + this.getDescricao() + ")";
+				   
 	}
 	
 	

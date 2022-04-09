@@ -61,6 +61,30 @@ public class Curso implements Comparable<Curso>  {
 	return this.getDescricao().compareTo(curso_atual.getDescricao());
 		
 	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		
+		if(obj instanceof Curso) {
+			Curso c = (Curso)obj;
+			
+			if(this.getCodigo() == c.getCodigo() &&
+					this.getDescricao() == c.getDescricao() &&
+					this.getCargaHoraria() == c.getCargaHoraria() &&
+					this.getPreco() == c.getPreco()) {
+				
+				return true;
+			}				
+		}
+		
+		return false;
+		
+		
+	}
+	
+	
+	
 	
 	
 
