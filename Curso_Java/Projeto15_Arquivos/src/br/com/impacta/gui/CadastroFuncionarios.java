@@ -1,8 +1,12 @@
 package br.com.impacta.gui;
 
 import java.awt.EventQueue;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -51,14 +55,14 @@ public class CadastroFuncionarios extends JFrame {
 	 */
 	public CadastroFuncionarios() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 437, 349);
+		setBounds(100, 100, 468, 456);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(10, 11, 398, 278);
+		panel.setBounds(10, 11, 422, 407);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
@@ -178,6 +182,142 @@ public class CadastroFuncionarios extends JFrame {
 		});
 		btnIncluirFuncionario.setBounds(10, 208, 151, 23);
 		panel.add(btnIncluirFuncionario);
+		
+		JButton btnGerarArquivo = new JButton("Gerar Arquivo");
+		btnGerarArquivo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				try {
+					
+						
+										
+					//Obtendo o documento.					
+					Documento documento;					
+					String doc = txtDocumento.getText();
+					
+					if(doc.length() == 11) {
+						documento = new DocumentoCpf(doc);
+					}
+					else if (doc.length() == 14) {
+						documento = new DocumentoCnpj(doc);
+					}
+					else {						
+                        throw new Exception("O documento informado não é CPF nem CNPJ");						
+					}	
+					
+					//obtendo o nome
+					String nome = txtNome.getText();
+					
+					//obtendo a idade.
+					int idade = Integer.parseInt(txtIdade.getText());
+										
+					//obtendo o sexo.					
+					Sexo sexo = (Sexo)cmbSexo.getSelectedItem();
+					
+					//obtendo o cargo.
+					String cargo = txtCargo.getText();
+					
+					//obtendo o salario.
+					double salario = Double.parseDouble(txtSalario.getText());
+					
+					
+					StringBuilder sb = new StringBuilder();		
+					
+					sb.append(nome).append(";")
+					  .append(idade).append(";")
+					  .append(sexo).append(";")
+					  .append(doc).append(";")
+					  .append(cargo).append(";")
+					  .append(salario).append("\n");
+					
+					FileWriter  writer =  new 
+							FileWriter
+		("C:\\Users\\virtual\\Documents\\Curso_Java\\Arquivos\\funcionarios.csv", true); 
+					
+					
+					  writer.write(sb.toString());
+					  writer.close();	
+									
+					  JOptionPane.showMessageDialog(CadastroFuncionarios.this, "Dados gerados com sucesso!");
+					  
+					
+					
+				} catch (Exception e) {
+					JOptionPane.showMessageDialog(CadastroFuncionarios.this,
+				              "Erro: " + e.getMessage(),
+		                      "Erro",
+		                      JOptionPane.ERROR_MESSAGE							
+				);	
+				}
+				
+				
+			}
+		});
+		btnGerarArquivo.setBounds(171, 208, 111, 23);
+		panel.add(btnGerarArquivo);
+		
+		JButton btnGerarLista = new JButton("Gerar Lista");
+		btnGerarLista.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				
+				try {
+					
+					FileReader  reader = 
+ new FileReader("C:\\Users\\virtual\\Documents\\Curso_Java\\Arquivos\\funcionarios.csv"); 
+					
+				 BufferedReader buffer = new BufferedReader(reader);
+					
+					
+				 while(true) {
+					 
+					 String linha = buffer.readLine();					 
+					 if( linha == null || linha.length() == 0) {
+						 break;
+					 }
+					 
+					 
+					 //cada linha do excel representa um objeto funcionario.
+					 
+					 
+					 //for na lista de funcionarios
+					 
+					    //adicionar cada funcionario no combobbox
+					 
+					 
+					 
+				 }
+				 
+				 
+					
+					
+					
+				} catch (Exception e2) {
+					JOptionPane.showMessageDialog(CadastroFuncionarios.this,
+				              "Erro: " + e2.getMessage(),
+		                      "Erro",
+		                      JOptionPane.ERROR_MESSAGE);	
+				}
+				
+				
+				
+				
+				
+				
+				
+			}
+		});
+		btnGerarLista.setBounds(297, 208, 91, 23);
+		panel.add(btnGerarLista);
+		
+		JComboBox cmbFuncionario = new JComboBox();
+		cmbFuncionario.setBounds(10, 311, 219, 22);
+		panel.add(cmbFuncionario);
+		
+		JLabel lblFuncionariosCadastrados = new JLabel("Funcionarios Cadastrados");
+		lblFuncionariosCadastrados.setFont(new Font("Tahoma", Font.BOLD, 17));
+		lblFuncionariosCadastrados.setBounds(10, 277, 232, 23);
+		panel.add(lblFuncionariosCadastrados);
 	}
 }
 
