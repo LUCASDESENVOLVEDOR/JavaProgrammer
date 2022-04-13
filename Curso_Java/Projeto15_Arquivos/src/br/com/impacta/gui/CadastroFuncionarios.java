@@ -7,6 +7,8 @@ import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -33,6 +35,8 @@ public class CadastroFuncionarios extends JFrame {
 	private JTextField txtCargo;
 	private JTextField txtSalario;
 
+	
+	
 	/**
 	 * Launch the application.
 	 */
@@ -54,6 +58,8 @@ public class CadastroFuncionarios extends JFrame {
 	 * Create the frame.
 	 */
 	public CadastroFuncionarios() {
+		
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 468, 456);
 		contentPane = new JPanel();
@@ -110,6 +116,11 @@ public class CadastroFuncionarios extends JFrame {
 		cmbSexo.addItem(Sexo.FEMININO);		
 		cmbSexo.setBounds(84, 92, 86, 22);
 		panel.add(cmbSexo);
+		
+		JComboBox<Funcionario> cmbFuncionario = new JComboBox();		
+		cmbFuncionario.setBounds(10, 311, 219, 22);
+		panel.add(cmbFuncionario);
+		
 		
 		txtCargo = new JTextField();
 		txtCargo.setBounds(84, 125, 111, 20);
@@ -268,6 +279,7 @@ public class CadastroFuncionarios extends JFrame {
 					
 				 BufferedReader buffer = new BufferedReader(reader);
 					
+				 List<Funcionario> funcionarios  = new ArrayList<>();
 					
 				 while(true) {
 					 
@@ -279,15 +291,32 @@ public class CadastroFuncionarios extends JFrame {
 					 
 					 //cada linha do excel representa um objeto funcionario.
 					 
-					 
-					 //for na lista de funcionarios
-					 
-					    //adicionar cada funcionario no combobbox
+					 String[] itens = linha.split(";");
 					 
 					 
-					 
+					 Funcionario f = new Funcionario(
+							 
+							 itens[0],
+							 Integer.parseInt(itens[1]),
+							 itens[2].equals("MASCULINO") ? Sexo.MASCULINO : Sexo.FEMININO,
+							 itens[3].length() == 11 ? new DocumentoCpf(itens[3]) : 
+								                       new DocumentoCnpj(itens[3]),
+						     itens[4],
+						     Double.parseDouble(itens[5])
+				);
+							 
+					 funcionarios.add(f);					 
 				 }
 				 
+				 //for na lista de funcionarios
+				 cmbFuncionario.removeAllItems();
+				  for (Funcionario funcionario : funcionarios) {
+					   cmbFuncionario.addItem(funcionario);
+					
+				}
+				 
+				 
+				    //adicionar cada funcionario no combobbox
 				 
 					
 					
@@ -310,9 +339,7 @@ public class CadastroFuncionarios extends JFrame {
 		btnGerarLista.setBounds(297, 208, 91, 23);
 		panel.add(btnGerarLista);
 		
-		JComboBox cmbFuncionario = new JComboBox();
-		cmbFuncionario.setBounds(10, 311, 219, 22);
-		panel.add(cmbFuncionario);
+		
 		
 		JLabel lblFuncionariosCadastrados = new JLabel("Funcionarios Cadastrados");
 		lblFuncionariosCadastrados.setFont(new Font("Tahoma", Font.BOLD, 17));

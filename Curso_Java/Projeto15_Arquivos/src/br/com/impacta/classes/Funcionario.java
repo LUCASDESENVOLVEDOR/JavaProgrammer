@@ -34,10 +34,7 @@ public class Funcionario extends Pessoa {
 				"\nSalário: " + this.getSalario();		
 		
 	}
-	
-	
-	
-	
+			
 	public String getCargo() {
 		return cargo;
 	}
@@ -50,6 +47,18 @@ public class Funcionario extends Pessoa {
 	public void setSalario(double salario) {
 		this.salario = salario;
 	}
+
+	
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return getNome() +   " - " + getSalario();
+	}
+	
+	
+	
+	
 	
 
 }
