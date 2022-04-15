@@ -35,9 +35,9 @@ public abstract class Dao<T,K> {
 	}
 	
 	
-	public abstract void incluir(T item);
-	public abstract void buscar(K id);
-	public abstract Collection<T> listar();	
+	public abstract void incluir(T item) throws Exception;
+	public abstract void buscar(K id) throws Exception;
+	public abstract Collection<T> listar() throws Exception;	
 	
 
 }
